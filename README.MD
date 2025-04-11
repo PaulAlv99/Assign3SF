@@ -13,8 +13,8 @@
 
 ## Setup
 1. Install dependencies: `npm install`
-2. Run server: `npm start`
-3. MongoDB must be running on `mongodb://127.0.0.1:27017/task3_db`
+2. In a .env should be used the MONGO_URL to acess the cluster
+3. Run server: `npm start`
 
 Endpoints:
 - `POST /api/auth/register`

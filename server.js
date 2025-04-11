@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -12,16 +13,13 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-
-
-// Serve static files (your HTML pages)
 app.use(express.static('views'));
 
-// Parse incoming JSON
+app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://admin:FjlkmASaRrFSmgYs@cluster0.nka2m.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -31,7 +29,6 @@ mongoose.connect('mongodb+srv://admin:FjlkmASaRrFSmgYs@cluster0.nka2m.mongodb.ne
 // Routes
 app.use('/api/auth', authRoutes);
 
-// Start server
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
