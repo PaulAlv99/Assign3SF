@@ -1,5 +1,5 @@
 # Task 3 - Registration and Login App
-## INFORMATION SECURITY FUNDAMENTALS - Maribor
+## Lab work for INFORMATION SECURITY FUNDAMENTALS - University of Maribor
 
 ## Technologies
 - Node.js
